@@ -1,6 +1,51 @@
 #include<GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include<fstream>
+#include<string>
+#include<sstream>
+
+struct ShaderProgramSource
+{
+    std::string VertexSource;
+    std::string FragmentSource;
+};
+static ShaderProgramSource ParseShader(const std::string filepath) {
+    std::ifstream stream(filepath);
+    std::string line;
+
+
+    enum ShaderType{
+        NONE=-1,VERTEX = 0, FRAGMENT = 1
+    };
+    std::stringstream ss[2];
+
+    ShaderType shadertype = ShaderType::NONE;
+    while (getline(stream, line)) {
+        if (line.find("#shader") != std::string::npos){
+            if (line.find("vertex") != std::string::npos) {
+                // vertex mode
+                shadertype = ShaderType::VERTEX;
+            }
+            else if (line.find("fragment") != std::string::npos) {
+                //fragment mode
+                shadertype = ShaderType::FRAGMENT;
+            }
+        }
+        else {
+            ss[(int)shadertype] << line << '\n';
+;        }
+
+        //if (line == "#shader vertex") {
+
+        //}
+        //else if (line == "#shader fragment") {
+
+        //}
+    }
+
+    return { ss[0].str(),ss[1].str() };
+}
 
 static int CompileShader(unsigned int type, const std::string& source) {
     //create a empty shader
@@ -97,29 +142,14 @@ int main(void)
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float) * 2 ,0) ;
 
 
+    ShaderProgramSource source;
+    source = ParseShader("resource/shaders/Basic.shade");
 
-    std::string vertexShader =
-        "#version 330 core\n"
-        "\n"
-        "layout(location = 0) in vec4 position;"
+    std::cout << "" << source.FragmentSource << std::endl;
+    std::cout << source.VertexSource << std::endl;
 
-        "void main()\n"
-        "{\n"
-        "gl_Position = position;\n"
-        "}\n";
 
-    std::string fragmentShader =
-        "#version 330 core\n"
-        "\n"
-        "layout(location = 0) out vec4 color;"
-
-        "void main()\n"
-        "{\n"
-        //rgba
-        "       color = vec4(1.0,0.0,0.0,1.0);\n"
-        "}\n";
-
-    unsigned int shader = CreateShader(vertexShader,fragmentShader);
+    unsigned int shader = CreateShader(source.VertexSource,source.FragmentSource);
     glUseProgram(shader);
     //glBindBuffer(GL_ARRAY_BUFFER,0);
     while (!glfwWindowShouldClose(window))
@@ -135,7 +165,7 @@ int main(void)
         /* Poll for and process events */
         glfwPollEvents();
     }
-
+    glDeleteProgram(shader);
     glfwTerminate();
     return 0;
 }
