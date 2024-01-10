@@ -4,6 +4,16 @@
 #include<fstream>
 #include<string>
 #include<sstream>
+static void GLClearError() {
+    while (glGetError() != GL_NO_ERROR);
+}
+
+static void GLCheckError() {
+    while (GLenum error = glGetError()) {
+        std::cout << "[OpenGL Error]" << error << std::endl;
+    }
+}
+
 
 struct ShaderProgramSource
 {
@@ -174,7 +184,7 @@ int main(void)
         // 
         //glDrawElements();
         // glDrawElement»­µÃË÷Òý
-        glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,nullptr);
+        glDrawElements(GL_TRIANGLES,6,GL_INT,nullptr);
         
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
