@@ -4,14 +4,22 @@
 #include<fstream>
 #include<string>
 #include<sstream>
+#include<assert.h>  
+#define ASSERT(x) if(!(x)) __debugbreak();
+#define GLCALL(x) GLClearError();\
+    x;\
+    ASSERT(GLLogCall(#x,__FILE__,__LINE__));
+
 static void GLClearError() {
-    while (glGetError() != GL_NO_ERROR);
+    while (glGetError() != GL_NO_ERROR);    
 }
 
-static void GLCheckError() {
+static bool GLLogCall(const char* function,const char* file, int line) {
     while (GLenum error = glGetError()) {
-        std::cout << "[OpenGL Error]" << error << std::endl;
+        std::cout << "[OpenGL Error] (" << error <<") " << function << " " << file << ":" << line << std::endl;
+        return false;
     }
+    return true;
 }
 
 
@@ -45,13 +53,6 @@ static ShaderProgramSource ParseShader(const std::string filepath) {
         else {
             ss[(int)shadertype] << line << '\n';
 ;        }
-
-        //if (line == "#shader vertex") {
-
-        //}
-        //else if (line == "#shader fragment") {
-
-        //}
     }
 
     return { ss[0].str(),ss[1].str() };
@@ -129,7 +130,7 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
-
+    glfwSwapInterval(1);
     if (glewInit() != GLEW_OK) {
         std::cout << "error" << std::endl;
     }
@@ -148,13 +149,17 @@ int main(void)
         0,1,2,
         2,3,0
     };
+    //VAO Vertex Array Object it is global
+    unsigned int vao;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
 
 
     //创建顶点缓冲区
     unsigned int buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
-    glBufferData(GL_ARRAY_BUFFER, 6 * 2 *  sizeof(float), positions, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 4 * 2 *  sizeof(float), positions, GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float) * 2 ,0) ;
@@ -167,7 +172,7 @@ int main(void)
 
     // 创建ShaderProgram
     ShaderProgramSource source;
-    source = ParseShader("resource/shaders/Basic.shade");
+    source = ParseShader("resource/shaders/Basic.shader");
 
     std::cout << "" << source.FragmentSource << std::endl;
     std::cout << source.VertexSource << std::endl;
@@ -176,16 +181,55 @@ int main(void)
     unsigned int shader = CreateShader(source.VertexSource,source.FragmentSource);
     glUseProgram(shader);
     //glBindBuffer(GL_ARRAY_BUFFER,0);
+    glBindVertexArray(0);
+    glUseProgram(0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    /*int location = glGetUniformLocation*/
+    int location = glGetUniformLocation(shader, "u_Color");
+    ASSERT(location != -1);
+
+    float increacement = 0.05f;
+    float RGB_r = 0.0f;
     while (!glfwWindowShouldClose(window))
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
+
+        glUseProgram(shader);
+        glUniform4f(location, RGB_r, 0.3f, 0.8f, 1.0f);
+
+
+        glBindVertexArray(vao);
+        glBindBuffer(GL_ARRAY_BUFFER, buffer);
+        //glEnableVertexAttribArray(0);
+        //glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
+
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+
         //glDrawArrays(GL_TRIANGLES,0,3);
         // 
         //glDrawElements();
         // glDrawElement画得索引
-        glDrawElements(GL_TRIANGLES,6,GL_INT,nullptr);
+        /*GLClearError();*/
+        GLCALL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+
         
+        
+        if (RGB_r >= 1.0f) {
+            increacement = -0.05f;
+        }
+        else if(RGB_r <0){
+            increacement = 0.05f;
+        }
+
+        RGB_r += increacement;
+        
+
+        /*assert(GLLogCall());*/ 
+
+        /*ASSERT(GLLogCall());*/
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 

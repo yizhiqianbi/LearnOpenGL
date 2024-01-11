@@ -20,6 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resource\shaders\Basic.shade" />
+    <Text Include="resource\shaders\Basic.shader" />
   </ItemGroup>
 </Project>
