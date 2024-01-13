@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32537.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/胡斌/source/repos/learnopengl/learnopengl/src/indexbuffer.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "9c46b212025d0f6e2d815fc62a0982c3993e776032e1642e716394cfc595ef95"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/胡斌/source/repos/learnopengl/learnopengl/src/indexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "df9ddb6f6d396e8431c24341d31fd116425fc5be836635a54e772ce2a1344f1e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/胡斌/source/repos/learnopengl/learnopengl/src/renderer.h"
+          },
+          "hashes": {
+            "sha-256": "cab3aa251157539a8301653bb457c5a5be643d3a8d2448cb2ad47e1fdac8e304"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/胡斌/source/repos/learnopengl/dependencies/glew/include/gl/glew.h"
+          },
+          "hashes": {
+            "sha-256": "1a2d50dc00a69940838cb3b5413cf7a7ac3cee8078672f27ffbfa2d3b88ad344"
+          }
+        }
+      ]
+    }
+  ]
+}
