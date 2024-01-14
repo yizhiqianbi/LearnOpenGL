@@ -3,5 +3,8 @@ C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\FragmentBuffer.cpp;C:\U
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\IndexBuffer.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\IndexBuffer.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Renderer.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\Renderer.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Shader.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\Shader.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Texture.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\Texture.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\glm\detail\glm.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\glm.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\stb_image\stb_image.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\stb_image.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\VertexArray.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\VertexArray.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\VertexBuffer.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\VertexBuffer.obj

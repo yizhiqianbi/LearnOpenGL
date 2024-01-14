@@ -1,0 +1,5 @@
+Blending determine how we combine our output color with what is already in our target buffer
+
+Output is the color we output from our fragment shader
+
+Target buffer is the buffer our fragment shader is drawing 
