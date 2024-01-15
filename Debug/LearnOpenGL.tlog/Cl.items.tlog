@@ -1,3 +1,5 @@
+C:\Users\胡斌\Desktop\LearnOpenGL\imgui-1.90.1\imgui-1.90.1\backends\imgui_impl_opengl3.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_impl_opengl3.obj
+C:\Users\胡斌\Desktop\LearnOpenGL\imgui-1.90.1\imgui-1.90.1\misc\cpp\imgui_stdlib.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_stdlib.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Application.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\Application.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\FragmentBuffer.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\FragmentBuffer.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\IndexBuffer.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\IndexBuffer.obj
@@ -5,6 +7,13 @@ C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Renderer.cpp;C:\Users\�
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Shader.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\Shader.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\Texture.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\Texture.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\glm\detail\glm.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\glm.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui_demo.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_demo.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui_draw.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_draw.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui_impl_glfw.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_impl_glfw.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui_impl_opengl3.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_impl_opengl3.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui_tables.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_tables.obj
+C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\imgui\imgui_widgets.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\imgui_widgets.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\vender\stb_image\stb_image.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\stb_image.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\VertexArray.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\VertexArray.obj
 C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\src\VertexBuffer.cpp;C:\Users\胡斌\source\repos\LearnOpenGL\LearnOpenGL\Debug\VertexBuffer.obj

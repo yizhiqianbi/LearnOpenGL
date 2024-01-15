@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>src\vender;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\vender;src\vender\imgui;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>src\vender;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\vender;src\vender\imgui;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Desktop\LearnOpenGL\imgui-1.90.1\imgui-1.90.1\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\LearnOpenGL\imgui-1.90.1\imgui-1.90.1\misc\cpp\imgui_stdlib.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\FragmentBuffer.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
@@ -140,11 +142,20 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\vender\glm\detail\glm.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\vender\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\vender\stb_image\stb_image.cpp" />
     <ClCompile Include="src\VertexArray.cpp" />
     <ClCompile Include="src\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\LearnOpenGL\imgui-1.90.1\imgui-1.90.1\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\..\..\..\Desktop\LearnOpenGL\imgui-1.90.1\imgui-1.90.1\misc\cpp\imgui_stdlib.h" />
     <ClInclude Include="src\FragmentBuffer.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Renderer.h" />
@@ -432,6 +443,15 @@
     <ClInclude Include="src\vender\glm\vec3.hpp" />
     <ClInclude Include="src\vender\glm\vec4.hpp" />
     <ClInclude Include="src\vender\glm\vector_relational.hpp" />
+    <ClInclude Include="src\vender\imgui\imconfig.h" />
+    <ClInclude Include="src\vender\imgui\imgui.h" />
+    <ClInclude Include="src\vender\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="src\vender\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\vender\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\vender\imgui\imgui_internal.h" />
+    <ClInclude Include="src\vender\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\vender\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\vender\imgui\imstb_truetype.h" />
     <ClInclude Include="src\vender\stb_image\stb_image.h" />
     <ClInclude Include="src\VertexArray.h" />
     <ClInclude Include="src\VertexBuffer.h" />
